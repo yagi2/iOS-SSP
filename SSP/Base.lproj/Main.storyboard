@@ -16,55 +16,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hiO-SS-f1Z">
-                                <rect key="frame" x="0.0" y="44" width="390" height="626"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KjL-eD-PwG">
+                                <rect key="frame" x="16" y="60" width="358" height="594"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これからじゃんけんをします" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cra-wD-ktZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これからじゃんけんをします" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0b-Im-Vrl">
                                 <rect key="frame" x="0.0" y="670" width="390" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Dxb-9F-MbV"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="SwY-EG-NJc"/>
+                                    <constraint firstAttribute="height" constant="40" id="G75-yR-1N8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fao-fj-zFn">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="zfh-G9-oG1">
                                 <rect key="frame" x="0.0" y="710" width="390" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kn-LX-QFG">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="グー">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doStone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tM6-R5-Dgl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-LH-QUI">
+                                        <rect key="frame" x="139" y="0.0" width="112" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="チョキ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doScissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cx-L2-5n8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqr-Qo-Cgl">
+                                        <rect key="frame" x="278" y="0.0" width="112" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="パー">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMe-bK-XGo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="EzR-rU-Qa1"/>
+                                    <constraint firstAttribute="height" constant="100" id="YhB-Bf-MKe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="じゃんけん">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="shuffleAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M56-3D-Lk5"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.3529411764705882" green="0.94901960784313721" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hiO-SS-f1Z" secondAttribute="trailing" id="Bb3-sf-rJ5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cra-wD-ktZ" secondAttribute="trailing" id="DOn-nh-bRZ"/>
-                            <constraint firstItem="fao-fj-zFn" firstAttribute="top" secondItem="cra-wD-ktZ" secondAttribute="bottom" id="E4k-Xk-lqY"/>
-                            <constraint firstItem="cra-wD-ktZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H9r-iJ-o59"/>
-                            <constraint firstItem="hiO-SS-f1Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JXB-Lq-kC6"/>
-                            <constraint firstItem="cra-wD-ktZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JZU-gI-hi4"/>
-                            <constraint firstItem="hiO-SS-f1Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="adX-aI-jtM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cra-wD-ktZ" secondAttribute="trailing" id="dLp-Pc-Pqe"/>
-                            <constraint firstItem="fao-fj-zFn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k52-6b-pLT"/>
-                            <constraint firstItem="fao-fj-zFn" firstAttribute="top" secondItem="cra-wD-ktZ" secondAttribute="bottom" id="k9b-Pb-Gdh"/>
-                            <constraint firstItem="cra-wD-ktZ" firstAttribute="top" secondItem="hiO-SS-f1Z" secondAttribute="bottom" id="uPz-Be-9SJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fao-fj-zFn" secondAttribute="bottom" id="viY-7V-sFX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fao-fj-zFn" secondAttribute="trailing" id="xxr-8R-CLT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P0b-Im-Vrl" secondAttribute="trailing" id="Beh-Kb-4t0"/>
+                            <constraint firstItem="P0b-Im-Vrl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EAh-Yu-13X"/>
+                            <constraint firstItem="P0b-Im-Vrl" firstAttribute="top" secondItem="KjL-eD-PwG" secondAttribute="bottom" constant="16" id="OLQ-DP-Cwf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KjL-eD-PwG" secondAttribute="trailing" constant="16" id="R33-ay-52K"/>
+                            <constraint firstItem="zfh-G9-oG1" firstAttribute="top" secondItem="P0b-Im-Vrl" secondAttribute="bottom" id="S7x-U8-NSH"/>
+                            <constraint firstItem="KjL-eD-PwG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="X1p-08-As9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zfh-G9-oG1" secondAttribute="bottom" id="eUF-Oa-nAz"/>
+                            <constraint firstItem="KjL-eD-PwG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="hgy-5k-zd8"/>
+                            <constraint firstItem="zfh-G9-oG1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uER-tz-czB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zfh-G9-oG1" secondAttribute="trailing" id="xov-jl-UH1"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="resultImageView" destination="hiO-SS-f1Z" id="cAu-Hd-H2e"/>
-                        <outlet property="resultLabel" destination="cra-wD-ktZ" id="SDf-I6-NRq"/>
+                        <outlet property="cpuHandImageView" destination="KjL-eD-PwG" id="6l2-IU-CRY"/>
+                        <outlet property="resultLabel" destination="P0b-Im-Vrl" id="CtR-li-qfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

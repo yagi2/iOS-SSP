@@ -9,42 +9,76 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var resultImageView: UIImageView!
+    @IBOutlet weak var cpuHandImageView: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     
-    private var resultHand: Hand? = .Paper
+    private var cpuHand: Hand? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
+    @IBAction func doStone(_ sender: Any) {
+        doJanken(userHand: .Stone)
+    }
     
-    @IBAction func shuffleAction(_ sender: Any) {
-        var newHand: Hand
+    @IBAction func doScissors(_ sender: Any) {
+        doJanken(userHand: .Scissors)
+    }
+    
+    @IBAction func doPaper(_ sender: Any) {
+        doJanken(userHand: .Paper)
+    }
+    
+    private func doJanken(userHand: Hand) {
+        var cpuNewHand: Hand
         repeat {
-            newHand = Hand.getSample()
-        } while newHand == resultHand
-        resultHand = newHand
+            cpuNewHand = Hand.getSample()
+        } while cpuNewHand == cpuHand
+        cpuHand = cpuNewHand
         
-        switch resultHand {
+        var result: Result = .Draw
+        switch cpuHand {
         case .Stone:
-            resultLabel.text = "グー"
-            resultImageView.image = UIImage(named: "Stone")
+            cpuHandImageView.image = UIImage(named: "Stone")
+            
+            switch userHand {
+            case .Stone: result = .Draw
+            case .Scissors: result = .Lose
+            case .Paper: result = .Win
+            }
         case .Scissors:
-            resultLabel.text = "チョキ"
-            resultImageView.image = UIImage(named: "Scissors")
+            cpuHandImageView.image = UIImage(named: "Scissors")
+            
+            switch userHand {
+            case .Stone: result = .Win
+            case .Scissors: result = .Draw
+            case .Paper: result = .Lose
+            }
         case .Paper:
-            resultLabel.text = "パー"
-            resultImageView.image = UIImage(named: "Paper")
+            cpuHandImageView.image = UIImage(named: "Paper")
+            
+            switch userHand {
+            case .Stone: result = .Lose
+            case .Scissors: result = .Win
+            case .Paper: result = .Lose
+            }
         default: break
         }
+        
+        resultLabel.text = "あなたは\(userHand.rawValue)を出して\(result.rawValue)でした"
     }
     
-    enum Hand: CaseIterable, Sampling {
-        case Stone
-        case Scissors
-        case Paper
+    enum Hand: String, CaseIterable, Sampling {
+        case Stone = "グー"
+        case Scissors = "チョキ"
+        case Paper = "パー"
+    }
+    
+    enum Result: String {
+        case Win = "勝ち"
+        case Lose = "負け"
+        case Draw = "あいこ"
     }
 }
 
