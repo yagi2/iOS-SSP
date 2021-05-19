@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBAction func shuffleAction(_ sender: Any) {
+        resultLabel.text = "グー"
+        resultImageView.image = UIImage(named: "Stone")
     }
 }
 
